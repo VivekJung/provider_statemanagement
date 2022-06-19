@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:state_management_provider_tutorial/home_screen.dart';
+import 'package:provider/provider.dart';
+import 'package:state_management_provider_tutorial/provider/count_provider.dart';
+import 'package:state_management_provider_tutorial/screens/count_example.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,12 +12,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return ChangeNotifierProvider(
+      create: (_) => CountProvider(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const CountExample(),
       ),
-      home: const HomeScreen(),
     );
   }
 }
