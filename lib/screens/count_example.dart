@@ -24,7 +24,6 @@ class _CountExampleState extends State<CountExample> {
 
   @override
   Widget build(BuildContext context) {
-    DateTime time = DateTime.now();
     log('Build start');
     final countProvider = Provider.of<CountProvider>(context, listen: false);
 
