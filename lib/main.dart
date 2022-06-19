@@ -7,6 +7,7 @@ import 'package:state_management_provider_tutorial/provider/theme_change_provide
 
 import 'package:state_management_provider_tutorial/screens/favorite/favorite_screen.dart';
 import 'package:state_management_provider_tutorial/screens/theme/dark_theme.dart';
+import 'package:state_management_provider_tutorial/screens/value_notify_listener.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
               appBarTheme: const AppBarTheme(backgroundColor: Colors.teal),
               iconTheme: const IconThemeData(color: Colors.red),
             ),
-            home: const DarkTheme(),
+            home: NotifyListenerScreen(),
           );
         }),
       ),
