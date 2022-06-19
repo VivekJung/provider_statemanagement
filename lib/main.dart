@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:state_management_provider_tutorial/provider/count_provider.dart';
+import 'package:state_management_provider_tutorial/provider/example_1_slider.dart';
 import 'package:state_management_provider_tutorial/screens/count_example.dart';
+import 'package:state_management_provider_tutorial/screens/example_1_slider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,14 +14,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => CountProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ExampleOneSliderProvider()),
+        ChangeNotifierProvider(create: (_) => CountProvider()),
+      ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Provider StateManagement',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const CountExample(),
+        home: const Example1(),
       ),
     );
   }
